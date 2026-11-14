@@ -9,6 +9,8 @@ updated: '2026-11-14'
 tags:
 - workflow
 ---
+> **Note:** This research was conducted in April 2026. Pricing benchmarks, market dynamics, and competitive positioning may have changed since then. Please verify key assumptions before using in financial models or investor materials.
+
 # AI Meeting Copilot — Business Model and Go-to-Market Strategy
 
 **Document Version:** 1.0

@@ -9,6 +9,8 @@ updated: '2026-11-14'
 tags:
 - reference
 ---
+> **Note:** This research was conducted in April 2026. Market data, competitor details, pricing, and funding figures may have changed since then. Please verify key claims before using in investor-facing materials or strategic decisions.
+
 # Market Sizing and Opportunity Analysis
 ## AI Meeting Copilot: Real-Time Conversation Coaching + Note-Taking
 

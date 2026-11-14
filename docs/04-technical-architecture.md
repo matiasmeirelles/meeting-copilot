@@ -9,6 +9,8 @@ updated: '2026-11-14'
 tags:
 - agent
 ---
+> **Note:** This research was conducted in April 2026. API pricing, tool capabilities, and technical landscape may have changed since then. Please verify key technical assumptions before implementation.
+
 # 04 — Technical Architecture and Moat Analysis
 # AI Meeting Copilot (Working Title: Cadence / Steer / Cue)
 

@@ -9,6 +9,8 @@ updated: '2026-11-14'
 tags:
 - guide
 ---
+> **Note:** This research was conducted in April 2026. Competitor products, pricing, funding rounds, and market positions may have changed since then. Please verify key claims before using in strategic decisions.
+
 # Competitive Intelligence — AI Meeting Copilot
 
 > **Confidence system:** [HIGH] = verified via live web research or public filings. [MEDIUM] = from training data, cross-referenced. [LOW] = estimated or inferred. [VERIFY LIVE] = needs fresh verification.
