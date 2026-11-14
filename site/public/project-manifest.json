@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "generated": "2026-04-29T00:00:00.000Z",
+  "defaultProject": "meeting-copilot",
+  "projects": [
+    {
+      "id": "meeting-copilot",
+      "name": "AI Meeting Copilot",
+      "title": "AI Meeting Copilot — Research & Analysis",
+      "description": "Complete market and competitive analysis of the AI Meeting Copilot opportunity: real-time conversation coaching from your playbook",
+      "publishJsonFile": "publish.json",
+      "homeDashboard": "dashboards-executive-decision-brief",
+      "footer": "AI Meeting Copilot | Startup Weekend Orlando 2026"
+    }
+  ]
+}

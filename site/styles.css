@@ -1,0 +1,651 @@
+@import "tailwindcss";
+
+/*
+ * Design Token System
+ * ────────────────────────────
+ * Neutral professional palette: greys, blues, greens.
+ * No saturated purple/pink — clarity over decoration.
+ * Toggle .dark on <html> to switch themes — zero JS per-dashboard.
+ *
+ * Naming:  surface / heading / body / muted / line  (neutrals)
+ *          {color}-fg / {color}-tint / {color}-line  (accents)
+ */
+
+@theme {
+  /* ── Neutral Surfaces ── */
+  --color-surface:       #ffffff;
+  --color-surface-alt:   #f8f9fa;
+  --color-surface-dim:   #f1f3f5;
+  --color-surface-inset: #e2e5e9;
+
+  /* ── Neutral Text ── */
+  --color-heading: #1a1f2b;
+  --color-body:    #3b4252;
+  --color-label:   #525d6e;
+  --color-muted:   #6e7a8a;
+  --color-dim:     #98a2b0;
+  --color-faint:   #cdd3da;
+
+  /* ── Neutral Lines ── */
+  --color-line:      #dfe3e8;
+  --color-line-soft: #eef0f3;
+  --color-line-hard: #c8ced6;
+
+  /* ── Blue (primary accent) ── */
+  --color-blue-fg:   #2b6cb0;
+  --color-blue-tint: #f0f5fa;
+  --color-blue-line: #b4cfe4;
+
+  /* ── Red (muted — errors, compliance) ── */
+  --color-red-fg:   #b83b3b;
+  --color-red-tint: #faf2f2;
+  --color-red-line: #e0bfbf;
+
+  /* ── Amber (muted warm) ── */
+  --color-amber-fg:   #8a6d1b;
+  --color-amber-tint: #f9f6ed;
+  --color-amber-line: #ddd0a4;
+
+  /* ── Green ── */
+  --color-green-fg:   #2f7d54;
+  --color-green-tint: #f0f8f4;
+  --color-green-line: #b4dcc6;
+
+  /* ── Emerald ── */
+  --color-emerald-fg:   #2a7260;
+  --color-emerald-tint: #eef7f4;
+  --color-emerald-line: #a8d8c8;
+
+  /* ── Sky (secondary blue) ── */
+  --color-sky-fg:   #2d6a8f;
+  --color-sky-tint: #f0f6fa;
+  --color-sky-line: #b0cfdf;
+
+  /* ── Indigo → Steel Blue ── */
+  --color-indigo-fg:   #3d5a80;
+  --color-indigo-tint: #f0f3f7;
+  --color-indigo-line: #b4c4d8;
+
+  /* ── Purple → Slate (neutral, no purple) ── */
+  --color-purple-fg:   #546275;
+  --color-purple-tint: #f3f5f7;
+  --color-purple-line: #c5cdd6;
+
+  /* ── Orange → Muted earth ── */
+  --color-orange-fg:   #8c5a2c;
+  --color-orange-tint: #f9f5f0;
+  --color-orange-line: #ddc8b0;
+
+  /* ── Teal ── */
+  --color-teal-fg:   #2a7372;
+  --color-teal-tint: #eef7f6;
+  --color-teal-line: #a8d6d4;
+
+  /* ── Yellow → Muted olive ── */
+  --color-yellow-fg:   #7a6e20;
+  --color-yellow-tint: #f8f6eb;
+  --color-yellow-line: #d8d0a0;
+
+  /* ── Pink → Warm grey (neutral, no pink) ── */
+  --color-pink-fg:   #6a5d65;
+  --color-pink-tint: #f5f3f4;
+  --color-pink-line: #d0c8cc;
+}
+
+/* ── Dark Mode ── */
+.dark {
+  --color-surface:       #0c1017;
+  --color-surface-alt:   #141a24;
+  --color-surface-dim:   #1c2330;
+  --color-surface-inset: #2a3342;
+
+  --color-heading: #e8ecf0;
+  --color-body:    #b8c0cc;
+  --color-label:   #8a95a5;
+  --color-muted:   #8a95a5;
+  --color-dim:     #5c6678;
+  --color-faint:   #3a4454;
+
+  --color-line:      #2a3342;
+  --color-line-soft: #1c2330;
+  --color-line-hard: #3a4454;
+
+  --color-blue-fg:   #6ba3d4;
+  --color-blue-tint: #121e2e;
+  --color-blue-line: #1e3454;
+
+  --color-red-fg:   #d47070;
+  --color-red-tint: #241010;
+  --color-red-line: #4a1c1c;
+
+  --color-amber-fg:   #c4a54a;
+  --color-amber-tint: #201a08;
+  --color-amber-line: #483c14;
+
+  --color-green-fg:   #5cb87a;
+  --color-green-tint: #0c2018;
+  --color-green-line: #1a4030;
+
+  --color-emerald-fg:   #50b090;
+  --color-emerald-tint: #0a1e1a;
+  --color-emerald-line: #163a32;
+
+  --color-sky-fg:   #5aaccf;
+  --color-sky-tint: #0e1e28;
+  --color-sky-line: #163850;
+
+  --color-indigo-fg:   #7b9cc0;
+  --color-indigo-tint: #101822;
+  --color-indigo-line: #1e3048;
+
+  --color-purple-fg:   #8a96aa;
+  --color-purple-tint: #141820;
+  --color-purple-line: #283040;
+
+  --color-orange-fg:   #c4905c;
+  --color-orange-tint: #201408;
+  --color-orange-line: #483418;
+
+  --color-teal-fg:   #50b0a8;
+  --color-teal-tint: #0a1e1c;
+  --color-teal-line: #163836;
+
+  --color-yellow-fg:   #baa84a;
+  --color-yellow-tint: #1e1a08;
+  --color-yellow-line: #403814;
+
+  --color-pink-fg:   #9a8890;
+  --color-pink-tint: #1a161a;
+  --color-pink-line: #342c30;
+}
+
+/* Dashboard light-mode overrides — remaps hardcoded Tailwind dark classes to design tokens */
+@import "./dashboard-light-mode-overrides.css";
+
+/* ── Markdown Body Prose ── */
+.markdown-body {
+  color: var(--color-body);
+  line-height: 1.7;
+  font-size: 0.9375rem;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: var(--color-heading);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  scroll-margin-top: 80px;
+}
+
+.markdown-body h1 { font-size: 1.875rem; margin-top: 0; }
+.markdown-body h2 { font-size: 1.5rem; border-bottom: 1px solid var(--color-line-soft); padding-bottom: 0.3em; }
+.markdown-body h3 { font-size: 1.25rem; }
+.markdown-body h4 { font-size: 1.1rem; }
+
+.markdown-body p {
+  margin: 0 0 1em;
+}
+
+.markdown-body a {
+  color: var(--color-sky-fg);
+  text-decoration: underline;
+  text-decoration-color: var(--color-sky-line);
+  text-underline-offset: 2px;
+}
+
+.markdown-body a:hover {
+  text-decoration-color: var(--color-sky-fg);
+}
+
+.markdown-body strong {
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin: 0 0 1em;
+  padding-left: 1.75em;
+}
+
+.markdown-body li {
+  margin-bottom: 0.35em;
+}
+
+.markdown-body li > ul,
+.markdown-body li > ol {
+  margin-top: 0.35em;
+  margin-bottom: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0 0 1em;
+  padding: 0.5em 1em;
+  border-left: 4px solid var(--color-sky-line);
+  background: var(--color-surface-alt);
+  color: var(--color-label);
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.markdown-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 2em 0;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-line);
+}
+
+/* ── Tables ── */
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1em;
+  font-size: 0.875rem;
+}
+
+.markdown-body th {
+  background: var(--color-surface-dim);
+  color: var(--color-heading);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--color-line);
+}
+
+.markdown-body td {
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--color-line);
+}
+
+.markdown-body tr:nth-child(even) {
+  background: var(--color-surface-alt);
+}
+
+/* ── Inline Code ── */
+.markdown-body code:not(pre code) {
+  background: var(--color-surface-dim);
+  color: var(--color-heading);
+  padding: 0.15em 0.35em;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, monospace;
+}
+
+/* ── Code Blocks ── */
+.markdown-body pre {
+  background: var(--color-surface-dim);
+  border: 1px solid var(--color-line);
+  border-radius: 0.5rem;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 0 0 1em;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.markdown-body pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, monospace;
+}
+
+/* ── Dark Mode: Highlight.js Overrides ── */
+.dark .markdown-body pre,
+.dark .hljs {
+  background: var(--color-surface-dim);
+  color: var(--color-body);
+}
+
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal { color: #7b9cc0; }
+.dark .hljs-string,
+.dark .hljs-title.class_,
+.dark .hljs-addition { color: #7eb89a; }
+.dark .hljs-comment,
+.dark .hljs-quote { color: #5c6678; font-style: italic; }
+.dark .hljs-number,
+.dark .hljs-selector-attr { color: #b8a070; }
+.dark .hljs-built_in,
+.dark .hljs-type { color: #b0a07a; }
+.dark .hljs-function,
+.dark .hljs-title.function_ { color: #6ba3d4; }
+.dark .hljs-attr { color: #b8a070; }
+.dark .hljs-variable { color: #c48080; }
+
+/* ── Copy Button ── */
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.6875rem;
+  font-family: inherit;
+  color: var(--color-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.markdown-body pre:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: var(--color-surface-dim);
+  color: var(--color-heading);
+}
+
+/* ── Mermaid Diagrams ── */
+.mermaid-diagram {
+  margin: 1.5rem 0;
+  padding: 1.5rem 1rem;
+  background: #10151e;
+  border: 1px solid #2a3342;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.mermaid-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Belt-and-suspenders: CSS fallback for any background the JS post-processing missed */
+.mermaid-diagram svg {
+  background: transparent !important;
+}
+
+.mermaid-diagram .node rect,
+.mermaid-diagram .node circle,
+.mermaid-diagram .node polygon {
+  stroke-width: 1.5px;
+}
+
+.mermaid-diagram .edgePath .path,
+.mermaid-diagram .flowchart-link,
+.mermaid-diagram line,
+.mermaid-diagram .relation,
+.mermaid-diagram .messageLine0,
+.mermaid-diagram .messageLine1 {
+  stroke-width: 2px !important;
+}
+
+.mermaid-diagram marker path {
+  stroke-width: 1px;
+}
+
+/* Sequence diagram: lifelines, actor boxes, message text */
+.mermaid-diagram .actor-line {
+  stroke-width: 2.5px !important;
+  stroke: #8a95a5 !important;
+}
+
+.mermaid-diagram .actor {
+  stroke-width: 2px !important;
+}
+
+.mermaid-diagram .messageText {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  fill: #d8dee6 !important;
+}
+
+.mermaid-diagram .sequenceNumber {
+  font-weight: 700 !important;
+}
+
+.mermaid-diagram .loopText tspan {
+  font-weight: 600 !important;
+  fill: #d8dee6 !important;
+}
+
+.mermaid-diagram .note rect {
+  stroke-width: 1.5px !important;
+}
+
+.mermaid-diagram .noteText {
+  font-size: 12px !important;
+  fill: #d8dee6 !important;
+}
+
+.mermaid-error {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  color: var(--color-red-fg, #ef4444);
+  background: var(--color-red-tint, rgba(239,68,68,0.1));
+  border: 1px solid var(--color-red-line, rgba(239,68,68,0.2));
+  border-radius: 0.375rem;
+}
+
+/* ── Task Lists (GFM) ── */
+.markdown-body input[type="checkbox"] {
+  margin-right: 0.4em;
+  accent-color: var(--color-sky-fg);
+}
+
+.markdown-body ul:has(input[type="checkbox"]) {
+  list-style: none;
+  padding-left: 0.5em;
+}
+
+/* ── KaTeX Math ── */
+.markdown-body .katex-display {
+  margin: 1em 0;
+  overflow-x: auto;
+  padding: 0.5em 0;
+}
+
+/* ── Search Highlight ── */
+.search-highlight {
+  background: var(--color-amber-tint);
+  color: var(--color-amber-fg);
+  padding: 0.05em 0.15em;
+  border-radius: 0.15rem;
+  font-weight: 600;
+}
+
+/* ── Reading Progress Bar ── */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--color-sky-fg);
+  z-index: 60;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 40;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  color: var(--color-muted);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s, background 0.15s;
+}
+
+.back-to-top:hover {
+  background: var(--color-surface-dim);
+  color: var(--color-heading);
+}
+
+/* ── Zoom / Lightbox Overlay ── */
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  cursor: zoom-out;
+  padding: 2rem;
+}
+
+.zoom-overlay > * {
+  max-width: 95vw;
+  max-height: 90vh;
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  overflow: auto;
+  padding: 1.5rem;
+}
+
+.zoom-overlay img {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  padding: 0;
+  background: transparent;
+}
+
+/* ── Clickable diagrams and images ── */
+.markdown-body .mermaid-diagram {
+  cursor: zoom-in;
+}
+
+.markdown-body img {
+  cursor: zoom-in;
+}
+
+/* ── Mobile Sidebar ── */
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 45;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .sidebar-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 46;
+    width: 280px;
+    overflow-y: auto;
+    background: var(--color-surface);
+    border-right: 1px solid var(--color-line);
+    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+  }
+}
+
+/* ── Print Styles ── */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  header, footer, nav,
+  .copy-btn,
+  button,
+  .back-to-top,
+  .reading-progress,
+  .sidebar-overlay,
+  .sidebar-mobile {
+    display: none !important;
+  }
+
+  /* Break out of the flex/overflow layout for full print */
+  body, #root, #root > div {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  main {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Ensure the flex-1 overflow-hidden container prints fully */
+  .flex-1 {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .markdown-body {
+    color: #1a1a1a;
+    font-size: 11pt;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3 {
+    color: #000;
+    page-break-after: avoid;
+  }
+
+  .markdown-body pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    border: 1px solid #ccc;
+    background: #f5f5f5 !important;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body table {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body a {
+    color: #1a1a1a;
+    text-decoration: underline;
+  }
+
+  .markdown-body a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  .markdown-body a[href^="#"]::after {
+    content: none;
+  }
+}

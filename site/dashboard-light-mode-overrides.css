@@ -1,0 +1,220 @@
+/*
+ * Dashboard Light-Mode Overrides
+ * ──────────────────────────────
+ * Pipeline-generated dashboards (from /research-full, etc.) use hardcoded
+ * Tailwind dark classes (bg-gray-900, text-slate-400, border-gray-700).
+ * These classes render dark backgrounds in light mode because they bypass
+ * the WPP design token system.
+ *
+ * This file remaps all common dark Tailwind classes to WPP design tokens
+ * under html:not(.dark), so dashboards look correct in light mode while
+ * preserving their original dark appearance in dark mode.
+ *
+ * Import: @import "./config/dashboard-light-mode-overrides.css";
+ * Place after the .dark {} block in styles.css.
+ *
+ * Light mode overrides for dashboard components
+ */
+
+/* ── Neutral Backgrounds ── */
+html:not(.dark) {
+  .bg-gray-950,
+  .bg-slate-950  { background-color: var(--color-surface) !important; }
+
+  .bg-gray-900,
+  .bg-slate-900  { background-color: var(--color-surface-alt) !important; }
+
+  .bg-gray-800,
+  .bg-slate-800  { background-color: var(--color-surface-dim) !important; }
+
+  .bg-gray-700,
+  .bg-slate-700  { background-color: var(--color-surface-inset) !important; }
+
+  .bg-gray-600,
+  .bg-slate-600  { background-color: var(--color-surface-inset) !important; }
+
+  /* ── Neutral Text ── */
+  .text-white,
+  .text-gray-50,
+  .text-slate-50,
+  .text-gray-100,
+  .text-slate-100 { color: var(--color-heading) !important; }
+
+  .text-gray-200,
+  .text-slate-200 { color: var(--color-heading) !important; }
+
+  .text-gray-300,
+  .text-slate-300 { color: var(--color-body) !important; }
+
+  .text-gray-400,
+  .text-slate-400 { color: var(--color-label) !important; }
+
+  .text-gray-500,
+  .text-slate-500 { color: var(--color-muted) !important; }
+
+  /* ── Neutral Borders ── */
+  .border-gray-600,
+  .border-slate-600 { border-color: var(--color-line-hard) !important; }
+
+  .border-gray-700,
+  .border-slate-700 { border-color: var(--color-line) !important; }
+
+  .border-gray-800,
+  .border-slate-800 { border-color: var(--color-line-soft) !important; }
+
+  /* ── Neutral Divide ── */
+  .divide-gray-700 > * + *,
+  .divide-slate-700 > * + * { border-color: var(--color-line) !important; }
+
+  .divide-gray-800 > * + *,
+  .divide-slate-800 > * + * { border-color: var(--color-line-soft) !important; }
+
+  /* ── Neutral Ring ── */
+  .ring-gray-700,
+  .ring-slate-700 { --tw-ring-color: var(--color-line) !important; }
+
+  .ring-gray-800,
+  .ring-slate-800 { --tw-ring-color: var(--color-line-soft) !important; }
+
+  /* ── Blue Accent ── */
+  .text-blue-400,
+  .text-blue-300  { color: var(--color-blue-fg) !important; }
+
+  .bg-blue-500\/10,
+  .bg-blue-900,
+  .bg-blue-950    { background-color: var(--color-blue-tint) !important; }
+
+  .border-blue-500\/20,
+  .border-blue-800 { border-color: var(--color-blue-line) !important; }
+
+  /* ── Red Accent ── */
+  .text-red-400,
+  .text-red-300    { color: var(--color-red-fg) !important; }
+
+  .bg-red-500\/10,
+  .bg-red-900,
+  .bg-red-950      { background-color: var(--color-red-tint) !important; }
+
+  .border-red-500\/20,
+  .border-red-800  { border-color: var(--color-red-line) !important; }
+
+  /* ── Amber / Yellow Accent ── */
+  .text-amber-400,
+  .text-amber-300,
+  .text-yellow-400,
+  .text-yellow-300 { color: var(--color-amber-fg) !important; }
+
+  .bg-amber-500\/10,
+  .bg-amber-900,
+  .bg-yellow-500\/10,
+  .bg-yellow-900   { background-color: var(--color-amber-tint) !important; }
+
+  .border-amber-500\/20,
+  .border-amber-800,
+  .border-yellow-500\/20,
+  .border-yellow-800 { border-color: var(--color-amber-line) !important; }
+
+  /* ── Green Accent ── */
+  .text-green-400,
+  .text-green-300  { color: var(--color-green-fg) !important; }
+
+  .bg-green-500\/10,
+  .bg-green-900,
+  .bg-green-950    { background-color: var(--color-green-tint) !important; }
+
+  .border-green-500\/20,
+  .border-green-800 { border-color: var(--color-green-line) !important; }
+
+  /* ── Emerald Accent ── */
+  .text-emerald-400,
+  .text-emerald-300 { color: var(--color-emerald-fg) !important; }
+
+  .bg-emerald-500\/10,
+  .bg-emerald-900   { background-color: var(--color-emerald-tint) !important; }
+
+  .border-emerald-500\/20,
+  .border-emerald-800 { border-color: var(--color-emerald-line) !important; }
+
+  /* ── Sky Accent ── */
+  .text-sky-400,
+  .text-sky-300    { color: var(--color-sky-fg) !important; }
+
+  .bg-sky-500\/10,
+  .bg-sky-900      { background-color: var(--color-sky-tint) !important; }
+
+  .border-sky-500\/20,
+  .border-sky-800  { border-color: var(--color-sky-line) !important; }
+
+  /* ── Indigo Accent ── */
+  .text-indigo-400,
+  .text-indigo-300 { color: var(--color-indigo-fg) !important; }
+
+  .bg-indigo-500\/10,
+  .bg-indigo-900   { background-color: var(--color-indigo-tint) !important; }
+
+  .border-indigo-500\/20,
+  .border-indigo-800 { border-color: var(--color-indigo-line) !important; }
+
+  /* ── Purple Accent ── */
+  .text-purple-400,
+  .text-purple-300 { color: var(--color-purple-fg) !important; }
+
+  .bg-purple-500\/10,
+  .bg-purple-900   { background-color: var(--color-purple-tint) !important; }
+
+  .border-purple-500\/20,
+  .border-purple-800 { border-color: var(--color-purple-line) !important; }
+
+  /* ── Orange Accent ── */
+  .text-orange-400,
+  .text-orange-300 { color: var(--color-orange-fg) !important; }
+
+  .bg-orange-500\/10,
+  .bg-orange-900   { background-color: var(--color-orange-tint) !important; }
+
+  .border-orange-500\/20,
+  .border-orange-800 { border-color: var(--color-orange-line) !important; }
+
+  /* ── Teal Accent ── */
+  .text-teal-400,
+  .text-teal-300   { color: var(--color-teal-fg) !important; }
+
+  .bg-teal-500\/10,
+  .bg-teal-900     { background-color: var(--color-teal-tint) !important; }
+
+  .border-teal-500\/20,
+  .border-teal-800 { border-color: var(--color-teal-line) !important; }
+
+  /* ── Pink Accent ── */
+  .text-pink-400,
+  .text-pink-300   { color: var(--color-pink-fg) !important; }
+
+  .bg-pink-500\/10,
+  .bg-pink-900     { background-color: var(--color-pink-tint) !important; }
+
+  .border-pink-500\/20,
+  .border-pink-800 { border-color: var(--color-pink-line) !important; }
+
+  /* ── Placeholder / Disabled ── */
+  .placeholder-gray-500::placeholder,
+  .placeholder-slate-500::placeholder { color: var(--color-dim) !important; }
+
+  /* ── Focus Ring ── */
+  .focus\:ring-blue-500:focus  { --tw-ring-color: var(--color-blue-fg) !important; }
+  .focus\:ring-gray-700:focus  { --tw-ring-color: var(--color-line) !important; }
+
+  /* ── Hover States ── */
+  .hover\:bg-gray-800:hover,
+  .hover\:bg-slate-800:hover   { background-color: var(--color-surface-dim) !important; }
+
+  .hover\:bg-gray-700:hover,
+  .hover\:bg-slate-700:hover   { background-color: var(--color-surface-inset) !important; }
+
+  .hover\:text-white:hover     { color: var(--color-heading) !important; }
+
+  .hover\:text-gray-300:hover,
+  .hover\:text-slate-300:hover { color: var(--color-body) !important; }
+
+  .hover\:border-gray-600:hover,
+  .hover\:border-slate-600:hover { border-color: var(--color-line-hard) !important; }
+}

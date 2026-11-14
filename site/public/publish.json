@@ -1,0 +1,82 @@
+{
+  "documents": [
+    {
+      "id": "dashboards-executive-decision-brief",
+      "title": "Executive Decision Brief",
+      "path": "dashboards/executive-decision-brief.jsx",
+      "type": "dashboard",
+      "category": "Dashboards",
+      "categoryOrder": 1,
+      "sortOrder": 1,
+      "summary": "Interactive executive analysis of the AI Meeting Copilot opportunity",
+      "keywords": ["executive", "market", "strategy", "investment"],
+      "created": "2026-04-29",
+      "updated": "2026-04-29"
+    },
+    {
+      "id": "dashboards-competitive-intelligence-dashboard",
+      "title": "Competitive Intelligence Dashboard",
+      "path": "dashboards/competitive-intelligence-dashboard.jsx",
+      "type": "dashboard",
+      "category": "Dashboards",
+      "categoryOrder": 1,
+      "sortOrder": 2,
+      "summary": "Interactive competitive landscape analysis with battle cards",
+      "keywords": ["competitive", "landscape", "positioning", "threats"],
+      "created": "2026-04-29",
+      "updated": "2026-04-29"
+    },
+    {
+      "id": "docs-01-market-sizing-and-opportunity",
+      "title": "Market Sizing & Opportunity",
+      "path": "docs/01-market-sizing-and-opportunity.md",
+      "type": "document",
+      "category": "Research",
+      "categoryOrder": 2,
+      "sortOrder": 1,
+      "summary": "TAM/SAM/SOM analysis, customer segmentation, pricing benchmarks, and 3-year financial projections",
+      "keywords": ["market sizing", "TAM", "SAM", "SOM", "opportunity", "revenue", "segments"],
+      "created": "2026-04-29",
+      "updated": "2026-04-29"
+    },
+    {
+      "id": "docs-02-competitive-intelligence",
+      "title": "Competitive Intelligence",
+      "path": "docs/02-competitive-intelligence.md",
+      "type": "document",
+      "category": "Research",
+      "categoryOrder": 2,
+      "sortOrder": 2,
+      "summary": "Comprehensive competitive analysis: Granola, Hedy AI, Poised, Otter, Balto, Gong, and more",
+      "keywords": ["competitive", "granola", "hedy", "poised", "balto", "gong", "meeting intelligence"],
+      "created": "2026-04-29",
+      "updated": "2026-04-29"
+    },
+    {
+      "id": "docs-03-business-model-and-gtm",
+      "title": "Business Model & GTM Strategy",
+      "path": "docs/03-business-model-and-gtm.md",
+      "type": "document",
+      "category": "Research",
+      "categoryOrder": 2,
+      "sortOrder": 3,
+      "summary": "Tiered SaaS model, go-to-market phases, financial projections, and customer acquisition strategy",
+      "keywords": ["business model", "GTM", "pricing", "revenue", "growth"],
+      "created": "2026-04-29",
+      "updated": "2026-04-29"
+    },
+    {
+      "id": "docs-04-technical-architecture-and-moat",
+      "title": "Technical Architecture & Moat",
+      "path": "docs/04-technical-architecture-and-moat.md",
+      "type": "document",
+      "category": "Research",
+      "categoryOrder": 2,
+      "sortOrder": 4,
+      "summary": "System architecture, real-time processing pipeline, unit economics, and technical moat analysis",
+      "keywords": ["architecture", "STT", "LLM", "nudge engine", "moat", "latency"],
+      "created": "2026-04-29",
+      "updated": "2026-04-29"
+    }
+  ]
+}
